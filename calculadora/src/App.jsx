@@ -1,11 +1,12 @@
 import "./App.css";
-import "./Display.jsx";
 import Display from "./Display.jsx";
+import Teclado from "./Teclado.jsx";
 
 function App() {
   return (
     <div id="calculadora">
       <Display />
+      <Teclado />
     </div>
   );
 }
