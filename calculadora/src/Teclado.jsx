@@ -14,6 +14,14 @@ function Teclado(props) {
     "+",
     "*",
     "/",
+    "(",
+    ")",
+    "√",
+    "^",
+    ".",
+    "=",
+    "C",
+    "BACK",
   ];
   return (
     <div className="grid">

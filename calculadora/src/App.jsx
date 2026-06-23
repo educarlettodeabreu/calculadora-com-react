@@ -6,8 +6,18 @@ import { useState } from "react";
 function App() {
   const [equacao, setequacao] = useState("");
 
+  function calcularequacao() {}
+
   const aoClicar = (valor) => {
-    setequacao(equacao + valor);
+    if (valor === "C") {
+      setequacao("");
+    } else if (valor === "BACK") {
+      setequacao(equacao.slice(0, -1));
+    } else if (valor === "=") {
+      calcularequacao();
+    } else {
+      setequacao(equacao + valor);
+    }
   };
 
   return (
