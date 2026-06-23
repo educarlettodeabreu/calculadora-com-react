@@ -1,7 +1,7 @@
-function Display() {
+function Display(props) {
   return (
     <div>
-      <p>0</p>
+      <p>{props.valor || 0}</p>
     </div>
   );
 }

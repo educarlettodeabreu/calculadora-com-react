@@ -1,16 +1,27 @@
-function Teclado() {
+function Teclado(props) {
+  const botoes = [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "0",
+    "-",
+    "+",
+    "*",
+    "/",
+  ];
   return (
-    <div>
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
-      <button>0</button>
+    <div className="grid">
+      {botoes.map((num) => (
+        <button key={num} onClick={() => props.aoClicar(num)}>
+          {num}
+        </button>
+      ))}
     </div>
   );
 }
