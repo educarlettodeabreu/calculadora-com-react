@@ -3,8 +3,14 @@ import Display from "./Display.jsx";
 import Teclado from "./Teclado.jsx";
 import { useState } from "react";
 import { Calcularequacao } from "./Calcularequacao.js";
+import Historico from "./Historico.jsx";
 function App() {
   const [equacao, setequacao] = useState("");
+  const [historico, sethistorico] = useState([]);
+
+  const aoCarregar = (conta) => {
+    setequacao(conta);
+  };
 
   const aoClicar = (valor) => {
     if (valor === "C") {
@@ -21,7 +27,9 @@ function App() {
         setTimeout(() => setequacao(""), 800);
         return;
       }
-      setequacao(Calcularequacao(equacao));
+      const resultado = Calcularequacao(equacao);
+      sethistorico([...historico, { conta: equacao, res: resultado }]);
+      setequacao(resultado);
     } else {
       setequacao(equacao + valor);
     }
@@ -31,6 +39,7 @@ function App() {
     <div id="calculadora">
       <Display valor={equacao} />
       <Teclado aoClicar={aoClicar} />
+      <Historico registros={[...historico]} aoCarregar={aoCarregar} />
     </div>
   );
 }
