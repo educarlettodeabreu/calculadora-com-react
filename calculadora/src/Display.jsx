@@ -1,6 +1,7 @@
+import "./Display.css";
 function Display(props) {
   return (
-    <div>
+    <div id="display">
       <p>{props.valor || 0}</p>
     </div>
   );
