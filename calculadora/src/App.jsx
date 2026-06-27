@@ -7,6 +7,11 @@ import Historico from "./Historico.jsx";
 function App() {
   const [equacao, setequacao] = useState("");
   const [historico, sethistorico] = useState([]);
+  const [mostrarhistorico, setmostrarhistorico] = useState(false);
+
+  const chamarhistorico = () => {
+    setmostrarhistorico(!mostrarhistorico);
+  };
 
   const aoCarregar = (conta) => {
     setequacao(conta);
@@ -37,9 +42,12 @@ function App() {
 
   return (
     <div id="calculadora">
-      <Display valor={equacao} />
-      <Teclado aoClicar={aoClicar} />
-      <Historico registros={[...historico]} aoCarregar={aoCarregar} />
+      <Display valor={equacao} mostrarhistorico={chamarhistorico} />
+      {mostrarhistorico ? (
+        <Historico registros={[...historico]} aoCarregar={aoCarregar} />
+      ) : (
+        <Teclado aoClicar={aoClicar} />
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@ function Teclado(props) {
     "-": "operador",
     "*": "operador",
     "/": "operador",
-    "=": "operador",
+    "=": "igual",
     C: "funcao",
     BACK: "funcao",
     "(": "funcao",

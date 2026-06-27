@@ -20,8 +20,3 @@ body {
   width: 100vw;
   height: 100vh;
 }
-
-#historico {
-  display: none;
-  border: 1px solid;
-}
