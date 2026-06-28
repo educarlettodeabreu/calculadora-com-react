@@ -1,6 +1,8 @@
 import "./Teclado.css";
 function Teclado(props) {
   const tipos = {
+    "√": "operador",
+    "^": "operador",
     "+": "operador",
     "-": "operador",
     "*": "operador",

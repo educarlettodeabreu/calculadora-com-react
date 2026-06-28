@@ -1,6 +1,10 @@
 export function Calcularequacao(equacao) {
   const organizando = equacao.replace(/[+\-*/^√()]/g, " $& ");
   const tokens = organizando.split(" ").filter((item) => item !== "");
+  if (tokens[0] === "-") {
+    tokens[0] = tokens[0] + tokens[1];
+    tokens.splice(1, 1);
+  }
 
   while (tokens.length > 1) {
     if (tokens.includes("(")) {

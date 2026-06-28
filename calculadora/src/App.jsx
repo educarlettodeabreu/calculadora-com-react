@@ -25,10 +25,10 @@ function App() {
     } else if (valor === "=") {
       if (
         /[+\-*/^]{2,}/.test(equacao) ||
-        /^[+\-*/^]/.test(equacao) ||
+        /^[+*/^]/.test(equacao) ||
         /[+\-*/^]$/.test(equacao)
       ) {
-        setequacao("Erro: Equação inválida");
+        setequacao("Equação inválida");
         setTimeout(() => setequacao(""), 800);
         return;
       }
