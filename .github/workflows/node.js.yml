@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    # Esta é a parte que faltava:
     defaults:
       run:
         working-directory: calculadora
@@ -29,3 +28,8 @@ jobs:
           cache-dependency-path: calculadora/package-lock.json
       - run: npm ci
       - run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./calculadora/dist

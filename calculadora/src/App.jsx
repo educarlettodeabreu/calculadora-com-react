@@ -48,7 +48,11 @@ function App() {
         aoClicar={aoClicar}
       />
       {mostrarhistorico ? (
-        <Historico registros={[...historico]} aoCarregar={aoCarregar} />
+        <Historico
+          registros={[...historico]}
+          aoCarregar={aoCarregar}
+          mostrarhistorico={chamarhistorico}
+        />
       ) : (
         <Teclado aoClicar={aoClicar} />
       )}

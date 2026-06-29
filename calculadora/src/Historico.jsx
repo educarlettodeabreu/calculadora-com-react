@@ -6,7 +6,13 @@ function Historico(props) {
       {registros.length > 0 ? (
         <ul>
           {registros.map((item, index) => (
-            <li key={index} onClick={() => props.aoCarregar(item.conta)}>
+            <li
+              key={index}
+              onClick={() => {
+                props.aoCarregar(item.conta);
+                props.mostrarhistorico();
+              }}
+            >
               {item.conta}={item.res}
             </li>
           ))}
