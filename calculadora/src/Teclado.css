@@ -5,6 +5,8 @@
   grid-template: repeat(5, 1fr) / repeat(4, 1fr);
 }
 button {
+  user-select: none;
+  cursor: pointer;
   background-color: #2d2d2d;
   border-color: #404040 #1a1a1a #1a1a1a #404040;
   color: white;
