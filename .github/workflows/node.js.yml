@@ -3,12 +3,12 @@ name: Node.js CI
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     defaults:
       run:
@@ -28,8 +28,9 @@ jobs:
           cache-dependency-path: calculadora/package-lock.json
       - run: npm ci
       - run: npm run build
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./calculadora/dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./calculadora/dist
