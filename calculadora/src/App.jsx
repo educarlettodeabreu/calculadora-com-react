@@ -42,7 +42,11 @@ function App() {
 
   return (
     <div id="calculadora">
-      <Display valor={equacao} mostrarhistorico={chamarhistorico} />
+      <Display
+        valor={equacao}
+        mostrarhistorico={chamarhistorico}
+        aoClicar={aoClicar}
+      />
       {mostrarhistorico ? (
         <Historico registros={[...historico]} aoCarregar={aoCarregar} />
       ) : (

@@ -10,6 +10,16 @@ function Display(props) {
       >
         Historico
       </button>
+      <button
+        id="BACK"
+        className="funcao"
+        onClick={() => props.aoClicar("BACK")}
+      >
+        BACK
+      </button>
+      <button id="C" className="funcao" onClick={() => props.aoClicar("C")}>
+        C
+      </button>
     </div>
   );
 }

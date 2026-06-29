@@ -16,8 +16,10 @@ ul {
 }
 
 li {
+  margin: 0.5px 0;
+  text-align: center;
   background-color: #2d2d2d;
-  border: 3px solid;
+  border: 2px solid;
   border-color: #404040 #1a1a1a #1a1a1a #404040;
   transition: all 0.1s ease;
   font-size: 1em;
@@ -28,4 +30,9 @@ li {
 
 li:active {
   border-color: #1a1a1a #404040 #404040 #1a1a1a;
+}
+.msg {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
 }
