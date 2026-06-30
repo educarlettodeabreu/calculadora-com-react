@@ -10,7 +10,6 @@ button {
   background-color: #2d2d2d;
   border-color: #404040 #1a1a1a #1a1a1a #404040;
   color: white;
-  transition: all 0.1s ease;
   font-size: 1em;
 }
 
