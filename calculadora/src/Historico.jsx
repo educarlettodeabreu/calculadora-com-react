@@ -2,7 +2,10 @@ import "./Historico.css";
 function Historico(props) {
   const registros = props.registros;
   return (
-    <div id="historico">
+    <div
+      id="historico"
+      className={props.mostrarhistorico ? "historicoativo" : ""}
+    >
       {registros.length > 0 ? (
         <ul>
           {registros.map((item, index) => (
