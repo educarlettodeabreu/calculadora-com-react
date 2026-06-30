@@ -51,7 +51,7 @@ li {
   border-color: #404040 #1a1a1a #1a1a1a #404040;
   transition: all 0.1s ease;
   font-size: 1em;
-  padding: 10px;
+  padding: 15px !important;
   cursor: pointer;
   overflow-y: auto;
 }
