@@ -1,7 +1,7 @@
 import "./App.css";
 import Display from "./Display.jsx";
 import Teclado from "./Teclado.jsx";
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Calcularequacao } from "./Calcularequacao.js";
 import Historico from "./Historico.jsx";
 function App() {
@@ -42,6 +42,19 @@ function App() {
     },
     [equacao, historico],
   );
+  useEffect(() => {
+    const teclado = (event) => {
+      const tecla = event.key;
+      const mapa = { Enter: "=", Backspace: "BACK" };
+      const valor = mapa[tecla] || tecla;
+
+      if (mapa[tecla] || /^[0-9.+\-*/^()]$/.test(tecla)) {
+        aoClicar(valor);
+      }
+    };
+    window.addEventListener("keydown", teclado);
+    return () => window.removeEventListener("keydown", teclado);
+  }, [aoClicar]);
 
   return (
     <div id="calculadora">
