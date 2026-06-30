@@ -2,7 +2,7 @@
   box-sizing: border-box;
   gap: 0;
   display: grid;
-  grid-template: 3fr 1fr / repeat(4, 1fr);
+  grid-template: 4fr 1fr / repeat(4, 1fr);
   font-size: 3em;
   background-color: #1a1a1a;
   color: white;
